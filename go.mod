@@ -26,4 +26,4 @@ require (
 	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
 )
 
-replace github.com/xxf098/lite-proxy => github.com/wu-mx/LiteSpeedTest v0.11.2-mod // indirect
+replace github.com/xxf098/lite-proxy => github.com/wu-mx/LiteSpeedTest v0.11.2-mod2 // indirect
