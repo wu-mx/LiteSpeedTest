@@ -16,7 +16,7 @@ var (
 )
 
 func DownloadRange(ctx context.Context, link string, part int, timeout time.Duration, handshakeTimeout time.Duration, resultChan chan<- int64, startChan chan<- time.Time) (int64, error) {
-	client, err := createClient(ctx, link)
+	client, err := CreateClient(ctx, link)
 	if err != nil {
 		return 0, err
 	}

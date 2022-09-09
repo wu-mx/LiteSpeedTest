@@ -67,7 +67,7 @@ func ByteCountIECTrim(b int64) string {
 	return strings.TrimSuffix(result, "/s")
 }
 
-func createClient(ctx context.Context, link string) (*proxy.Client, error) {
+func CreateClient(ctx context.Context, link string) (*proxy.Client, error) {
 	var d outbound.Dialer
 	matches, err := utils.CheckLink(link)
 	if err != nil {
@@ -90,7 +90,7 @@ func createClient(ctx context.Context, link string) (*proxy.Client, error) {
 
 func Download(link string, timeout time.Duration, handshakeTimeout time.Duration, resultChan chan<- int64, startChan chan<- time.Time) (int64, error) {
 	ctx := context.Background()
-	client, err := createClient(ctx, link)
+	client, err := CreateClient(ctx, link)
 	if err != nil {
 		return 0, err
 	}
@@ -153,7 +153,7 @@ func downloadInternal(ctx context.Context, option DownloadOption, resultChan cha
 
 func DownloadComplete(link string, timeout time.Duration, handshakeTimeout time.Duration) (int64, error) {
 	ctx := context.Background()
-	client, err := createClient(ctx, link)
+	client, err := CreateClient(ctx, link)
 	if err != nil {
 		return 0, err
 	}
